@@ -26,10 +26,13 @@ void selection_sort(int *array, size_t size)
 				index = j;
 			}
 		}
-		temp = array[index];
-		array[index] = array[i];
-		array[i] = temp;
-		print_array(array, size);
+		if ( i != index)
+		{
+			temp = array[i];
+			array[i] = array[index];
+			array[index] = temp;
+			print_array(array, size);
+		}
 	}
 }
 
